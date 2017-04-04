@@ -1,7 +1,7 @@
 {
     "name": "newsletter2go/phpcss",
     "replace": {
-        "hielsnoppe/phpcss": "self.version"
+        "hielsnoppe/phpcss": "0.1.11"
     },
     "version": "0.1.12",
     "type": "library",
