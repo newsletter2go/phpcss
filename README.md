@@ -22,11 +22,11 @@ To install this library via [Composer](https://getcomposer.org/) add the followi
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/hielsnoppe/phpcss.git"
+            "url": "https://github.com/newsletter2go/phpcss.git"
         }
     ],
     "require": {
-        "hielsnoppe/phpcss": "0.1.11"
+        "newsletter2go/phpcss": "0.1.12"
     }
 }
 ```
