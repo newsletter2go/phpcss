@@ -60,6 +60,14 @@ class Document implements Item {
     }
 
     /**
+     * @return Rule[]
+     */
+    public function getRules()
+    {
+        return $this->rules;
+    }
+
+    /**
      * Return a string representation
      *
      * @return string
