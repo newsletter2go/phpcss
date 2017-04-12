@@ -26,7 +26,7 @@ To install this library via [Composer](https://getcomposer.org/) add the followi
         }
     ],
     "require": {
-        "newsletter2go/phpcss": "0.1.12"
+        "newsletter2go/phpcss": "0.1.13"
     }
 }
 ```
