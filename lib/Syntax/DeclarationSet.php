@@ -45,13 +45,11 @@ class DeclarationSet extends DeclarationList {
     }
     
     /**
-     * Removes a Declaration from this DeclarationSet
+     * remove a Declaration from this DeclarationSet
      *
-     * @param $property
+     * @param Declaration $declaration
      */
-
     public function removeDeclaration ($property) {
-
         unset($this->declarations[$property]);
         ksort($this->declarations);
     }
