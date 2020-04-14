@@ -3,7 +3,7 @@
     "replace": {
         "hielsnoppe/phpcss": "0.1.11"
     },
-    "version": "0.2.2",
+    "version": "0.2.4",
     "type": "library",
     "description": "",
     "keywords": [ "css" ],

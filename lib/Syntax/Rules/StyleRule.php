@@ -72,6 +72,14 @@ class StyleRule extends QualifiedRule {
     }
 
     /**
+     * @return A
+     */
+    public function getPrelude()
+    {
+        return $this->prelude;
+    }
+
+    /**
      * Return string representation
      *
      * @return string
