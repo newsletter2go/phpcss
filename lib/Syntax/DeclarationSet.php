@@ -52,7 +52,7 @@ class DeclarationSet extends DeclarationList {
 
     public function removeDeclaration ($property) {
 
-        unset($this->declarations[$property];
+        unset($this->declarations[$property]);
         ksort($this->declarations);
     }
 
