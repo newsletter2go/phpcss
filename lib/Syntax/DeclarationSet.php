@@ -43,6 +43,16 @@ class DeclarationSet extends DeclarationList {
 
         ksort($this->declarations);
     }
+    
+    /**
+     * remove a Declaration from this DeclarationSet
+     *
+     * @param Declaration $declaration
+     */
+    public function removeDeclaration ($property) {
+        unset($this->declarations[$property]);
+        ksort($this->declarations);
+    }
 
     /**
      * Shorthand for creating and adding a declaration to this DeclarationSet
