@@ -16,19 +16,16 @@ class Declaration implements Item {
     /**
      * @var string $property  The declared Property
      */
-
     private $property;
 
     /**
      * @var string $value  The declared Value
      */
-
     private $value;
 
     /**
      * @var bool $important  The important flag
      */
-
     private $important;
 
     /**

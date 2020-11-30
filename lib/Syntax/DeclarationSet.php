@@ -41,11 +41,11 @@ class DeclarationSet extends DeclarationList {
 
         ksort($this->declarations);
     }
-    
+
     /**
      * remove a Declaration from this DeclarationSet
      *
-     * @param Declaration $declaration
+     * @param string $property
      */
     public function removeDeclaration ($property) {
         unset($this->declarations[$property]);
@@ -68,7 +68,7 @@ class DeclarationSet extends DeclarationList {
      * Get the declaration for the given property name in this set
      *
      * @param string $property
-     * @return Declaration[]
+     * @return Declaration|null
      */
     public function getDeclaration ($property) {
 

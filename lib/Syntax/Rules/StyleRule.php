@@ -68,7 +68,7 @@ class StyleRule extends QualifiedRule {
     }
 
     /**
-     * @return A
+     * @return string
      */
     public function getPrelude()
     {
