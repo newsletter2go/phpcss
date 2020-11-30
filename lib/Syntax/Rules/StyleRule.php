@@ -22,7 +22,6 @@ class StyleRule extends QualifiedRule {
      * @param string $selector
      * @param DeclarationList $declarations
      */
-
     public function __construct ($selector = null, DeclarationList $declarations = null) {
 
         $this->prelude = $selector;
@@ -40,7 +39,6 @@ class StyleRule extends QualifiedRule {
      *
      * @param Declaration $declaration
      */
-
     public function addDeclaration (Declaration $declaration) {
 
         $this->block->addDeclaration($declaration);
@@ -53,7 +51,6 @@ class StyleRule extends QualifiedRule {
      * @param string $value
      * @param bool $important
      */
-
     public function createDeclaration ($property, $value, $important = false) {
 
         $this->block->createDeclaration($property, $value, $important);
@@ -65,7 +62,6 @@ class StyleRule extends QualifiedRule {
      * @param string[] $filter
      * @return Declaration[]
      */
-
     public function getDeclarations ($filter = array()) {
 
         return $this->block->getDeclarations($filter);
@@ -84,7 +80,6 @@ class StyleRule extends QualifiedRule {
      *
      * @return string
      */
-
     public function __toString () {
 
         $str = strval($this->block);

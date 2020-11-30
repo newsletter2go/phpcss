@@ -18,7 +18,6 @@ class DeclarationSet extends DeclarationList {
      *
      * @param Declaration[] $declarations
      */
-
     public function __construct ($declarations = array()) {
 
         $this->declarations = array();
@@ -34,7 +33,6 @@ class DeclarationSet extends DeclarationList {
      *
      * @param Declaration $declaration
      */
-
     public function addDeclaration (Declaration $declaration) {
 
         $property = $declaration->getProperty();
@@ -61,7 +59,6 @@ class DeclarationSet extends DeclarationList {
      * @param string $value
      * @param bool $important
      */
-
     public function createDeclaration ($property, $value, $important = false) {
 
         $this->addDeclaration(new Declaration($property, $value, $important));
@@ -73,7 +70,6 @@ class DeclarationSet extends DeclarationList {
      * @param string $property
      * @return Declaration[]
      */
-
     public function getDeclaration ($property) {
 
         if (array_key_exists($property, $this->declarations)) {
@@ -90,7 +86,6 @@ class DeclarationSet extends DeclarationList {
      * @param string[] $filter
      * @return Declaration[]
      */
-
     public function getDeclarations ($filter = array()) {
 
         if (count($filter)) {
@@ -116,7 +111,6 @@ class DeclarationSet extends DeclarationList {
      * @param DeclarationSet $other
      * @return DeclarationSet  Union of $this and $other
      */
-
     public function union (DeclarationSet $other) {
 
         $result = new DeclarationSet($other->declarations);
@@ -134,7 +128,6 @@ class DeclarationSet extends DeclarationList {
      *
      * @return string
      */
-
     public function __toString () {
 
         return implode('; ', array_map('strval', array_values($this->declarations)));

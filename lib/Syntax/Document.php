@@ -12,25 +12,21 @@ use \NielsHoppe\PHPCSS\Syntax\Rules\ImportRule;
 /**
  * Document
  */
-
 class Document implements Item {
 
     /**
      * @var ImportRule[] $imports  @import (special AtRule)
      */
-
     private $imports;
 
     /**
      * @var Rule[] $rules  StyleRule or AtRule (except @import)
      */
-
     private $rules;
 
     /**
      * Constructs a new Document
      */
-
     public function __construct () {
 
         $this->imports = array();
@@ -42,7 +38,6 @@ class Document implements Item {
      *
      * @param ImportRule $import
      */
-
     public function addImport (ImportRule $import) {
 
         array_push($this->imports, $import);
@@ -53,7 +48,6 @@ class Document implements Item {
      *
      * @param Rule $rule
      */
-
     public function addRule (Rule $rule) {
 
         array_push($this->rules, $rule);
@@ -72,7 +66,6 @@ class Document implements Item {
      *
      * @return string
      */
-
     public function __toString () {
 
         $toStringFunc = function ($item) {

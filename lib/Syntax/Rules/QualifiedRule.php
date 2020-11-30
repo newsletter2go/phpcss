@@ -6,6 +6,7 @@
 
 namespace NielsHoppe\PHPCSS\Syntax\Rules;
 
+use NielsHoppe\PHPCSS\Syntax\DeclarationList;
 use NielsHoppe\PHPCSS\Syntax\Rule;
 
 /**
@@ -16,14 +17,12 @@ use NielsHoppe\PHPCSS\Syntax\Rule;
 abstract class QualifiedRule implements Rule {
 
     /**
-     * @var $prelude  A list of component values
+     * @var string $prelude A list of component values
      */
-
     protected $prelude;
 
     /**
-     * @var $block  A simple {} block
+     * @var DeclarationList $block  A simple {} block which contains a list of declarations
      */
-
     protected $block;
 }

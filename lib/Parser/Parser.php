@@ -15,37 +15,38 @@ use \NielsHoppe\PHPCSS\Syntax\DeclarationList;
 
 class Parser {
 
-    /**
-     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-stylesheet
-     * @todo Implement this
-     *
-     * @return Syntax\Stylesheet
-     */
-
-    public static function parseStylesheet ($string) {
-
-        $string;
-    }
-
-    /**
-     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-rules
-     * @todo Implement this
-     *
-     * @return Syntax\Rule[]
-     */
-
-    public static function parseRuleList ($string) {
-
-        $string;
-    }
+//    /**
+//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-stylesheet
+//     * @todo Implement this
+//     *
+//     * @return $string Syntax\Stylesheet
+//     */
+//
+//    public static function parseStylesheet ($string) {
+//
+//        $string;
+//    }
+//
+//    /**
+//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-rules
+//     * @todo Implement this
+//     *
+//     * @return Syntax\Rule[]
+//     */
+//
+//    public static function parseRuleList ($string) {
+//
+//        $string;
+//    }
 
     /**
      * @see https://www.w3.org/TR/css-syntax-3/#parse-a-rule
      * @todo Currently only parses StyleRule
      *
-     * @return Syntax\Rule
+     * @param string $string
+     * @return StyleRule
+     * @throws \Exception
      */
-
     public static function parseRule ($string) {
 
         $selector = null;
@@ -66,9 +67,7 @@ class Parser {
 
         $block = self::parseDeclarationList($body);
 
-        $result = new StyleRule($selector, $block);
-
-        return $result;
+        return new StyleRule($selector, $block);
     }
 
     /**
@@ -76,9 +75,8 @@ class Parser {
      * @see https://www.w3.org/TR/css-syntax-3/#parse-a-declaration
      *
      * @param string      $string
-     * @return Syntax\Declaration
+     * @return Declaration
      */
-
     public static function parseDeclaration ($string) {
 
         $parts = explode(':', $string);
@@ -92,17 +90,16 @@ class Parser {
         $value = trim($parts[1]);
         $important = false; // TODO
 
-        $result = new Declaration($property, $value, $important);
-
-        return $result;
+        return new Declaration($property, $value, $important);
     }
 
     /**
      * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-declarations
      *
-     * @return Syntax\DeclarationList
+     * @param string $string
+     * @return DeclarationList
+     * @throws \Exception
      */
-
     public static function parseDeclarationList ($string) {
 
         $tokens = array_filter(explode(';', $string));
@@ -114,30 +111,28 @@ class Parser {
             return $declaration;
         }, $tokens);
 
-        $result = new DeclarationList($declarations);
-
-        return $result;
+        return new DeclarationList($declarations);
     }
 
-    /**
-     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-component-value
-     *
-     * @return Syntax\ComponentValue
-     */
+//    /**
+//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-component-value
+//     *
+//     * @return Syntax\ComponentValue
+//     */
+//
+//    public static function parseComponentValue ($string) {
+//
+//        $string;
+//    }
 
-    public static function parseComponentValue ($string) {
-
-        $string;
-    }
-
-    /**
-     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-component-values
-     *
-     * @return Syntax\ComponentValue[]
-     */
-
-    public static function parseComponentValueList ($string) {
-
-        $string;
-    }
+//    /**
+//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-component-values
+//     *
+//     * @return Syntax\ComponentValue[]
+//     */
+//
+//    public static function parseComponentValueList ($string) {
+//
+//        $string;
+//    }
 }

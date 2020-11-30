@@ -6,6 +6,7 @@
 
 namespace NielsHoppe\PHPCSS\Syntax\Rules;
 
+use NielsHoppe\PHPCSS\Syntax\Item;
 use NielsHoppe\PHPCSS\Syntax\Rule;
 
 /**
@@ -18,22 +19,19 @@ class AtRule implements Rule {
     /**
      * @var string $keyword  Keyword
      */
-
     protected $keyword;
 
     /**
-     * @var string|Block $content  Content
+     * @var string|Item $content  Content
      */
-
     protected $content;
 
     /**
      * Construct a new AtRule
      *
      * @param string $keyword
-     * @param string $content
+     * @param string|Item $content
      */
-
     public function __construct ($keyword, $content) {
 
         $this->keyword = $keyword;
@@ -45,7 +43,6 @@ class AtRule implements Rule {
      *
      * @return string
      */
-
     public function __toString () {
 
         if (is_string($this->content)) {
@@ -57,8 +54,6 @@ class AtRule implements Rule {
             $content = $this->content->__toString();
         }
 
-        $result = sprintf('@%s %s', $this->keyword, $content);
-
-        return $result;
+        return sprintf('@%s %s', $this->keyword, $content);
     }
 }

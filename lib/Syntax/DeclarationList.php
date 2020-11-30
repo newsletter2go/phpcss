@@ -16,7 +16,6 @@ class DeclarationList {
     /**
      * @var Declaration[] $declarations  A list of declarations
      */
-
     protected $declarations;
 
     /**
@@ -24,7 +23,6 @@ class DeclarationList {
      *
      * @param Declaration[] $declarations
      */
-
     public function __construct ($declarations = array()) {
 
         $this->declarations = $declarations;
@@ -35,7 +33,6 @@ class DeclarationList {
      *
      * @param Declaration $declaration
      */
-
     public function addDeclaration (Declaration $declaration) {
 
         array_push($this->declarations, $declaration);
@@ -48,7 +45,6 @@ class DeclarationList {
      * @param string $value
      * @param bool $important
      */
-
     public function createDeclaration ($property, $value, $important = false) {
 
         $this->addDeclaration(new Declaration($property, $value, $important));
@@ -60,7 +56,6 @@ class DeclarationList {
      * @param string[] $filter
      * @return Declaration[]
      */
-
     public function getDeclarations ($filter = array()) {
 
         if (count($filter)) {
@@ -86,7 +81,6 @@ class DeclarationList {
      *
      * @return string
      */
-
     public function __toString () {
 
         return implode('; ', array_map('strval', $this->declarations));

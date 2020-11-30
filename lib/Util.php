@@ -21,7 +21,6 @@ class Util {
      *
      * @return int|float
      */
-
     public static function clip ($min, $max, $value) {
 
         return max($min, min($max, $value));
