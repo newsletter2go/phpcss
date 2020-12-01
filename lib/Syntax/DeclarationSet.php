@@ -7,10 +7,10 @@
 namespace NielsHoppe\PHPCSS\Syntax;
 
 /**
- * DeclarationSet
+ * DeclarationSet: it is like a list but we don't allow duplication and it doesn't have any order. Here we have some set operations as well.
+ *
  * This is a utility without an explicit counterpart from the specification
  */
-
 class DeclarationSet extends DeclarationList {
 
     /**
@@ -19,11 +19,10 @@ class DeclarationSet extends DeclarationList {
      * @param Declaration[] $declarations
      */
     public function __construct ($declarations = array()) {
-
-        $this->declarations = array();
+        //$this->declarations = array();
+        parent::__construct();
 
         foreach ($declarations as $declaration) {
-
             $this->addDeclaration($declaration);
         }
     }
@@ -34,11 +33,8 @@ class DeclarationSet extends DeclarationList {
      * @param Declaration $declaration
      */
     public function addDeclaration (Declaration $declaration) {
-
         $property = $declaration->getProperty();
-
         $this->declarations[$property] = $declaration;
-
         ksort($this->declarations);
     }
 
@@ -60,7 +56,6 @@ class DeclarationSet extends DeclarationList {
      * @param bool $important
      */
     public function createDeclaration ($property, $value, $important = false) {
-
         $this->addDeclaration(new Declaration($property, $value, $important));
     }
 
@@ -71,9 +66,7 @@ class DeclarationSet extends DeclarationList {
      * @return Declaration|null
      */
     public function getDeclaration ($property) {
-
         if (array_key_exists($property, $this->declarations)) {
-
             return $this->declarations[$property];
         }
 
@@ -114,9 +107,7 @@ class DeclarationSet extends DeclarationList {
     public function union (DeclarationSet $other) {
 
         $result = new DeclarationSet($other->declarations);
-
         foreach ($this->declarations as $property => $declaration) {
-
             $result->addDeclaration($declaration);
         }
 
