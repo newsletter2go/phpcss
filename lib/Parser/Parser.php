@@ -15,29 +15,21 @@ use \NielsHoppe\PHPCSS\Syntax\DeclarationList;
 
 class Parser {
 
-//    /**
-//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-stylesheet
-//     * @todo Implement this
-//     *
-//     * @return $string Syntax\Stylesheet
-//     */
-//
-//    public static function parseStylesheet ($string) {
-//
-//        $string;
-//    }
-//
-//    /**
-//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-rules
-//     * @todo Implement this
-//     *
-//     * @return Syntax\Rule[]
-//     */
-//
-//    public static function parseRuleList ($string) {
-//
-//        $string;
-//    }
+    /**
+     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-stylesheet
+     */
+    public static function parseStylesheet ($string) {
+        //todo Implement this
+        throw new \Exception('Method not implemented');
+    }
+
+    /**
+     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-rules
+     */
+    public static function parseRuleList ($string) {
+        //todo Implement this
+        throw new \Exception('Method not implemented');
+    }
 
     /**
      * @see https://www.w3.org/TR/css-syntax-3/#parse-a-rule
@@ -74,8 +66,9 @@ class Parser {
      * Parse a Declaration from a string
      * @see https://www.w3.org/TR/css-syntax-3/#parse-a-declaration
      *
-     * @param string      $string
+     * @param string $string
      * @return Declaration
+     * @throws \Exception
      */
     public static function parseDeclaration ($string) {
 
@@ -106,33 +99,25 @@ class Parser {
 
         $declarations = array_map(function ($token) {
 
-            $declaration = self::parseDeclaration($token);
-
-            return $declaration;
+            return self::parseDeclaration($token);
         }, $tokens);
 
         return new DeclarationList($declarations);
     }
 
-//    /**
-//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-component-value
-//     *
-//     * @return Syntax\ComponentValue
-//     */
-//
-//    public static function parseComponentValue ($string) {
-//
-//        $string;
-//    }
+    /**
+     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-component-value
+     */
+    public static function parseComponentValue ($string) {
 
-//    /**
-//     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-component-values
-//     *
-//     * @return Syntax\ComponentValue[]
-//     */
-//
-//    public static function parseComponentValueList ($string) {
-//
-//        $string;
-//    }
+        throw new \Exception('Method not implemented');
+    }
+
+    /**
+     * @see https://www.w3.org/TR/css-syntax-3/#parse-a-list-of-component-values
+     */
+    public static function parseComponentValueList ($string) {
+
+        throw new \Exception('Method not implemented');
+    }
 }
