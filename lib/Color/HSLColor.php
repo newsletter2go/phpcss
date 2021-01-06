@@ -83,7 +83,7 @@ class HSLColor {
 
         if ($hue * 3 < 2) {
 
-            return intval($m1 + ($m2 - $m1) * (2 / 3 - $hue) * 6);
+            return $m1 + ($m2 - $m1) * (2 / 3 - $hue) * 6;
         }
 
         return $m1;
