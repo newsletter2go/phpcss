@@ -2,6 +2,8 @@
 
 namespace NielsHoppe\PHPCSS\Color;
 
+use NielsHoppe\PHPCSS\Util;
+
 /**
  * @see http://stackoverflow.com/a/20440417/948404
  * @see http://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
@@ -12,25 +14,21 @@ class HSLColor {
     /**
      * @var int $hue
      */
-
     private $hue;
 
     /**
      * @var int $saturation
      */
-
     private $saturation;
 
     /**
      * @var int $lightness
      */
-
     private $lightness;
 
     /**
      * @var float|null $alpha  Alpha value between 0.0 and 1.0
      */
-
     private $alpha;
 
     /**
@@ -39,7 +37,6 @@ class HSLColor {
      * @param int $lightness
      * @param float|null $alpha  Alpha value between 0.0 and 1.0
      */
-
     public function __construct ($hue, $saturation, $lightness, $alpha = null) {
 
         $this->hue = $hue;
@@ -57,10 +54,12 @@ class HSLColor {
     }
 
     /**
-     *
+     * @param float $m1
+     * @param float $m2
+     * @param float $hue
+     * @return float
      */
-
-    public function huetorgb ($m1, $m2, $hue) {
+    private function hueToRgb ($m1, $m2, $hue) {
 
         if ($hue < 0) {
 
@@ -95,7 +94,6 @@ class HSLColor {
      *
      * @return RGBColor
      */
-
     public function toRGBColor () {
 
         if ($this->lightness < 0.5) {
@@ -109,13 +107,11 @@ class HSLColor {
 
         $m1 = $this->lightness * 2 - $m2;
 
-        $red = ceil(self::huetorgb($m1, $m2, $this->hue + 1 / 3) / 100 * 255);
-        $green = ceil(self::huetorgb($m1, $m2, $this->hue) / 100 * 255);
-        $blue = ceil(self::huetorgb($m1, $m2, $this->hue - 1 / 3) / 100 * 255);
+        $red = intval(ceil(self::huetorgb($m1, $m2, $this->hue + 1 / 3) / 100 * 255));
+        $green = intval(ceil(self::huetorgb($m1, $m2, $this->hue) / 100 * 255));
+        $blue = intval(ceil(self::huetorgb($m1, $m2, $this->hue - 1 / 3) / 100 * 255));
 
-        $color = new RGBColor($red, $green, $blue, $this->alpha);
-
-        return $color;
+        return new RGBColor($red, $green, $blue, $this->alpha);
     }
 
     /**
@@ -123,7 +119,6 @@ class HSLColor {
      *
      * @return string
      */
-
     public function __toString () {
 
         // FIXME Wrong!

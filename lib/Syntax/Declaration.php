@@ -6,8 +6,6 @@
 
 namespace NielsHoppe\PHPCSS\Syntax;
 
-use NielsHoppe\PHPCSS\Syntax\Item;
-
 /**
  * Declaration
  * @see https://www.w3.org/TR/css-syntax-3/#declaration
@@ -18,19 +16,16 @@ class Declaration implements Item {
     /**
      * @var string $property  The declared Property
      */
-
     private $property;
 
     /**
      * @var string $value  The declared Value
      */
-
     private $value;
 
     /**
      * @var bool $important  The important flag
      */
-
     private $important;
 
     /**
@@ -40,7 +35,6 @@ class Declaration implements Item {
      * @param string $value  TODO Restrict to Value as soon as implemented
      * @param bool $important  State of the !important flag
      */
-
     public function __construct ($property, $value, $important = false) {
 
         $this->property = $property;
@@ -51,9 +45,8 @@ class Declaration implements Item {
     /**
      * Return property part of this Declaration
      *
-     * @return Property
+     * @return string
      */
-
     public function getProperty () {
 
         return $this->property;
@@ -62,9 +55,8 @@ class Declaration implements Item {
     /**
      * Return value part of this Declaration
      *
-     * @return Value
+     * @return string
      */
-
     public function getValue () {
 
         return $this->value;
@@ -75,7 +67,6 @@ class Declaration implements Item {
      *
      * @return bool
      */
-
     public function isImportant () {
 
         return $this->important;
@@ -86,7 +77,6 @@ class Declaration implements Item {
      *
      * @param bool $important  State of the !important flag (defaults to true)
      */
-
     public function setImportant ($important = true) {
 
         $this->important = boolval($important);
@@ -97,7 +87,6 @@ class Declaration implements Item {
      *
      * @return string
      */
-
     public function __toString () {
 
         $value = is_object($this->value) ? $this->value->__toString() : $this->value;

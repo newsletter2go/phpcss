@@ -20,6 +20,5 @@ interface Item {
      *
      * @return string
      */
-
     public function __toString ();
 }

@@ -13,25 +13,21 @@ class RGBColor {
     /**
      * @var int $red  The amount of red
      */
-
     private $red;
 
     /**
      * @var int $green  The amount of green
      */
-
     private $green;
 
     /**
      * @var int $blue  The amount of blue
      */
-
     private $blue;
 
     /**
      * @var float|null $alpha  Alpha value between 0.0 and 1.0
      */
-
     private $alpha;
 
     /**
@@ -40,7 +36,6 @@ class RGBColor {
      * @param int $blue  The amount of blue
      * @param float|null $alpha  Alpha value between 0.0 and 1.0
      */
-
     public function __construct ($red, $green, $blue, $alpha = null) {
 
         $this->red = Util::clip(0, 255, intval($red));
@@ -62,7 +57,6 @@ class RGBColor {
      *
      * @return string
      */
-
     public function toHexString () {
 
         return sprintf('#%02x%02x%02x', $this->red, $this->green, $this->blue);
@@ -73,7 +67,6 @@ class RGBColor {
      *
      * @return string
      */
-
     public function __toString () {
 
         if ($this->alpha < 1.0) {
